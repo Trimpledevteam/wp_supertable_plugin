@@ -34,13 +34,13 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_script( 'my-script' );
 } );
 
-add_action('admin_menu', 'my_plugin_menu');
+add_action('admin_menu', 'superjs_plugin_menu');
 
-function my_plugin_menu() {
-	add_menu_page('Super JS Table', 'Super JS Table', 'administrator', 'my-plugin-settings', 'my_plugin_settings_page', 'dashicons-admin-generic');
+function superjs_plugin_menu() {
+	add_menu_page('Super JS Table', 'Super JS Table', 'administrator', 'my-plugin-settings', 'superjs_plugin_settings_page', 'dashicons-admin-generic');
 }
 
-function my_plugin_settings_page() { ?>
+function superjs_plugin_settings_page() { ?>
 <div class="wrap">
 <img width="200px"  src="<?php echo plugin_dir_url( __FILE__ ) ; ?>img/trimple_logo.png">
 <h2>Super JS Table Settings</h2>
