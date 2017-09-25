@@ -37,7 +37,7 @@ add_action( 'wp_enqueue_scripts', function() {
 add_action('admin_menu', 'superjs_plugin_menu');
 
 function superjs_plugin_menu() {
-	add_menu_page('Super JS Table', 'Super JS Table', 'administrator', 'my-plugin-settings', 'superjs_plugin_settings_page', 'dashicons-admin-generic');
+	add_menu_page('Super JS Table', 'Super JS Table', 'administrator', 'superjs-plugin-settings', 'superjs_plugin_settings_page', 'dashicons-admin-generic');
 }
 
 function superjs_plugin_settings_page() { ?>
@@ -56,8 +56,8 @@ function superjs_plugin_settings_page() { ?>
     <li>Η Pro Έκδοση υποστηρίζει απεριόριστο αριθμό πινάκων καθώς και επιπλέον style στα κουμπιά.</li   >
 </ul>
 <form method="post" action="options.php">
-    <?php settings_fields( 'my-plugin-settings-group' ); ?>
-    <?php do_settings_sections( 'my-plugin-settings-group' ); ?>
+    <?php settings_fields( 'superjs-plugin-settings-group' ); ?>
+    <?php do_settings_sections( 'superjs-plugin-settings-group' ); ?>
     <table class="form-table">
         <tr valign="top">
         <th scope="row">Table ID</th>
@@ -90,16 +90,16 @@ function superjs_plugin_settings_page() { ?>
 </form>
 </div>
 <?php  }
-add_action( 'admin_init', 'my_plugin_settings' );
+add_action( 'admin_init', 'superjs_plugin_settings' );
 
-function my_plugin_settings() {
-	register_setting( 'my-plugin-settings-group', 'table_id' );
-	register_setting( 'my-plugin-settings-group', 'more_button_name' );
-	register_setting( 'my-plugin-settings-group', 'less_button_name' );
-	register_setting( 'my-plugin-settings-group', 'less_button_class' );
-	register_setting( 'my-plugin-settings-group', 'more_button_class' );
-	register_setting( 'my-plugin-settings-group', 'table_limits' );
-    register_setting( 'my-plugin-settings-group', 'sort_columns' );
+function superjs_plugin_settings() {
+	register_setting( 'superjs-plugin-settings-group', 'table_id' );
+	register_setting( 'superjs-plugin-settings-group', 'more_button_name' );
+	register_setting( 'superjs-plugin-settings-group', 'less_button_name' );
+	register_setting( 'superjs-plugin-settings-group', 'less_button_class' );
+	register_setting( 'superjs-plugin-settings-group', 'more_button_class' );
+	register_setting( 'superjs-plugin-settings-group', 'table_limits' );
+    register_setting( 'superjs-plugin-settings-group', 'sort_columns' );
 }
 
 function buttons_super_js_table() {
